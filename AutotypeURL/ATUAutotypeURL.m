@@ -7,7 +7,6 @@
 //
 
 #import "ATUAutotypeURL.h"
-#import "../AutotypeURLHelper/ATUAutotypeURLHelperProtocol.h"
 
 static NSString *ATUChromeBundleIdentifier = @"com.google.Chrome";
 static NSString *ATUSafariBundleIdentifier = @"com.apple.Safari";
@@ -60,21 +59,10 @@ static NSString *ATUSafariBundleIdentifier = @"com.apple.Safari";
     return @"";
   }
   
-  NSLog(@"Establishin XPC connection");
-  NSXPCConnection *_connectionToService = [[NSXPCConnection alloc] initWithServiceName:@"com.hicknhacksoftware.AutotypeURLHelper"];
-  _connectionToService.remoteObjectInterface = [NSXPCInterface interfaceWithProtocol:@protocol(ATUAutotypeURLHelperProtocol)];
-  [_connectionToService resume];
-
-  //Once you have a connection to the service, you can use it like this:
-  
-  NSLog(@"Requesting reply");
-  [_connectionToService.remoteObjectProxy runAppleScriptWithSource:scriptSource withReply:^(NSString *URL) {
-    NSLog(@"%@", URL);
-  }];
-  
-  //And, when you are finished with the service, clean up the connection like this:
-  [_connectionToService invalidate];
-  return @"";
+  NSAppleScript *script = [[NSAppleScript alloc] initWithSource:scriptSource];
+  NSDictionary *errorDict;
+  NSAppleEventDescriptor *aed = [script executeAndReturnError:&errorDict];
+  return aed.stringValue;
 }
 
 @end
