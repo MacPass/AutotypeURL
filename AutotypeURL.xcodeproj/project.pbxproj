@@ -8,17 +8,56 @@
 
 /* Begin PBXBuildFile section */
 		4C8139322281FD3900092FD7 /* ATUAutotypeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8139312281FD3900092FD7 /* ATUAutotypeURL.m */; };
+		4CBA877D228308CC008515B1 /* ATUAutotypeURLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA877C228308CC008515B1 /* ATUAutotypeURLHelper.m */; };
+		4CBA877F228308CC008515B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA877E228308CC008515B1 /* main.m */; };
+		4CBA878622830969008515B1 /* AutotypeURLHelper.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4CBA8778228308CB008515B1 /* AutotypeURLHelper.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4CBA8787228309F5008515B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C81391F2281FBC200092FD7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CBA8777228308CB008515B1;
+			remoteInfo = AutotypeURLHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4CBA878522830960008515B1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				4CBA878622830969008515B1 /* AutotypeURLHelper.xpc in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4C8139272281FBC200092FD7 /* AutotypeURL.mpplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutotypeURL.mpplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C81392A2281FBC200092FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C8139302281FD3900092FD7 /* ATUAutotypeURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATUAutotypeURL.h; sourceTree = "<group>"; };
 		4C8139312281FD3900092FD7 /* ATUAutotypeURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATUAutotypeURL.m; sourceTree = "<group>"; };
+		4CBA8778228308CB008515B1 /* AutotypeURLHelper.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = AutotypeURLHelper.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CBA877A228308CC008515B1 /* ATUAutotypeURLHelperProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATUAutotypeURLHelperProtocol.h; sourceTree = "<group>"; };
+		4CBA877B228308CC008515B1 /* ATUAutotypeURLHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATUAutotypeURLHelper.h; sourceTree = "<group>"; };
+		4CBA877C228308CC008515B1 /* ATUAutotypeURLHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATUAutotypeURLHelper.m; sourceTree = "<group>"; };
+		4CBA877E228308CC008515B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4CBA8780228308CC008515B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4C8139242281FBC200092FD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CBA8775228308CB008515B1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -32,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				4C8139292281FBC200092FD7 /* AutotypeURL */,
+				4CBA8779228308CC008515B1 /* AutotypeURLHelper */,
 				4C8139282281FBC200092FD7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -40,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				4C8139272281FBC200092FD7 /* AutotypeURL.mpplugin */,
+				4CBA8778228308CB008515B1 /* AutotypeURLHelper.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,6 +95,18 @@
 			path = AutotypeURL;
 			sourceTree = "<group>";
 		};
+		4CBA8779228308CC008515B1 /* AutotypeURLHelper */ = {
+			isa = PBXGroup;
+			children = (
+				4CBA877A228308CC008515B1 /* ATUAutotypeURLHelperProtocol.h */,
+				4CBA877B228308CC008515B1 /* ATUAutotypeURLHelper.h */,
+				4CBA877C228308CC008515B1 /* ATUAutotypeURLHelper.m */,
+				4CBA877E228308CC008515B1 /* main.m */,
+				4CBA8780228308CC008515B1 /* Info.plist */,
+			);
+			path = AutotypeURLHelper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -64,15 +117,34 @@
 				4C8139232281FBC200092FD7 /* Sources */,
 				4C8139242281FBC200092FD7 /* Frameworks */,
 				4C8139252281FBC200092FD7 /* Resources */,
+				4CBA878522830960008515B1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4CBA8788228309F5008515B1 /* PBXTargetDependency */,
 			);
 			name = AutotypeURL;
 			productName = AutotypeURL;
 			productReference = 4C8139272281FBC200092FD7 /* AutotypeURL.mpplugin */;
 			productType = "com.apple.product-type.bundle";
+		};
+		4CBA8777228308CB008515B1 /* AutotypeURLHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CBA8783228308CC008515B1 /* Build configuration list for PBXNativeTarget "AutotypeURLHelper" */;
+			buildPhases = (
+				4CBA8774228308CB008515B1 /* Sources */,
+				4CBA8775228308CB008515B1 /* Frameworks */,
+				4CBA8776228308CB008515B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutotypeURLHelper;
+			productName = AutotypeURLHelper;
+			productReference = 4CBA8778228308CB008515B1 /* AutotypeURLHelper.xpc */;
+			productType = "com.apple.product-type.xpc-service";
 		};
 /* End PBXNativeTarget section */
 
@@ -84,6 +156,9 @@
 				ORGANIZATIONNAME = "HicknHack Software GmbH";
 				TargetAttributes = {
 					4C8139262281FBC200092FD7 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					4CBA8777228308CB008515B1 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
@@ -101,12 +176,20 @@
 			projectRoot = "";
 			targets = (
 				4C8139262281FBC200092FD7 /* AutotypeURL */,
+				4CBA8777228308CB008515B1 /* AutotypeURLHelper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4C8139252281FBC200092FD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CBA8776228308CB008515B1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -124,7 +207,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4CBA8774228308CB008515B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CBA877F228308CC008515B1 /* main.m in Sources */,
+				4CBA877D228308CC008515B1 /* ATUAutotypeURLHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4CBA8788228309F5008515B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CBA8777228308CB008515B1 /* AutotypeURLHelper */;
+			targetProxy = 4CBA8787228309F5008515B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4C81392B2281FBC200092FD7 /* Debug */ = {
@@ -264,7 +364,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = AutotypeURL/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				INSTALL_PATH = "$(HOME)/Library/Application Support/MacPass";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hicknhacksoftware.AutotypeURL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -278,11 +378,35 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = AutotypeURL/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				INSTALL_PATH = "$(HOME)/Library/Application Support/MacPass";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hicknhacksoftware.AutotypeURL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = mpplugin;
+			};
+			name = Release;
+		};
+		4CBA8781228308CC008515B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AutotypeURLHelper/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hicknhacksoftware.AutotypeURLHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4CBA8782228308CC008515B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AutotypeURLHelper/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hicknhacksoftware.AutotypeURLHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -303,6 +427,15 @@
 			buildConfigurations = (
 				4C81392E2281FBC200092FD7 /* Debug */,
 				4C81392F2281FBC200092FD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CBA8783228308CC008515B1 /* Build configuration list for PBXNativeTarget "AutotypeURLHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CBA8781228308CC008515B1 /* Debug */,
+				4CBA8782228308CC008515B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

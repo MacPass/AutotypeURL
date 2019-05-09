@@ -7,6 +7,7 @@
 //
 
 #import "ATUAutotypeURL.h"
+#import "../AutotypeURLHelper/ATUAutotypeURLHelperProtocol.h"
 
 static NSString *ATUChromeBundleIdentifier = @"com.google.Chrome";
 static NSString *ATUSafariBundleIdentifier = @"com.apple.Safari";
@@ -30,35 +31,50 @@ static NSString *ATUSafariBundleIdentifier = @"com.apple.Safari";
 
 @end
 
+@interface ATUAutotypeURL ()
+
+@property (nonatomic) NSDictionary *scripts;
+
+@end
+
 @implementation ATUAutotypeURL
 
-- (BOOL)acceptsRunningApplication:(nonnull NSRunningApplication *)runningApplication {
-  if(runningApplication.atu_isChrome || runningApplication.atu_isSafari) {
-    return YES;
+- (instancetype)initWithPluginHost:(MPPluginHost *)host {
+  self = [super initWithPluginHost:host];
+  if(self) {
+    self.scripts = @{ @"com.apple.Safari"   : @"tell application \"Safari\" to get URL of front document",
+                      @"com.google.Chrome"  : @"tell application \"Google Chrome\" to get URL of active tab of front window" };
   }
-  return NO;
+  return self;
+}
+
+- (BOOL)acceptsRunningApplication:(nonnull NSRunningApplication *)runningApplication {
+  return (self.scripts[runningApplication.bundleIdentifier] != nil);
 }
 
 - (nonnull NSString *)windowTitleForRunningApplication:(nonnull NSRunningApplication *)runningApplication {
-  if(runningApplication.atu_isSafari) {
-    return [self _getURLFromSafari];
+  
+  NSLog(@"%@", runningApplication);
+  NSString *scriptSource = self.scripts[runningApplication.bundleIdentifier];
+  if(scriptSource.length == 0) {
+    return @"";
   }
-  if(runningApplication.atu_isChrome) {
-    return [self _getURLFromChrome];
-  }
+  
+  NSLog(@"Establishin XPC connection");
+  NSXPCConnection *_connectionToService = [[NSXPCConnection alloc] initWithServiceName:@"com.hicknhacksoftware.AutotypeURLHelper"];
+  _connectionToService.remoteObjectInterface = [NSXPCInterface interfaceWithProtocol:@protocol(ATUAutotypeURLHelperProtocol)];
+  [_connectionToService resume];
+
+  //Once you have a connection to the service, you can use it like this:
+  
+  NSLog(@"Requesting reply");
+  [_connectionToService.remoteObjectProxy runAppleScriptWithSource:scriptSource withReply:^(NSString *URL) {
+    NSLog(@"%@", URL);
+  }];
+  
+  //And, when you are finished with the service, clean up the connection like this:
+  [_connectionToService invalidate];
   return @"";
-}
-
-- (NSString *)_getURLFromSafari {
-  NSAppleScript *script = [[NSAppleScript alloc] initWithSource:@"tell application \"Safari\" to get URL of front document"];
-  NSAppleEventDescriptor *aed = [script executeAndReturnError:NULL];
-  return aed.stringValue;
-}
-
-- (NSString *)_getURLFromChrome {
-  NSAppleScript *script = [[NSAppleScript alloc] initWithSource:@"tell application \"Google Chrome\" to get URL of active tab of front window"];
-  NSAppleEventDescriptor *aed = [script executeAndReturnError:NULL];
-  return aed.stringValue;
 }
 
 @end
