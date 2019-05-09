@@ -10,15 +10,27 @@
 		4C8139322281FD3900092FD7 /* ATUAutotypeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8139312281FD3900092FD7 /* ATUAutotypeURL.m */; };
 		4C8DCEF22283FD0C008CF8EC /* ATUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DCEF12283FD0C008CF8EC /* ATUAppDelegate.m */; };
 		4C8DCEFA2283FD0E008CF8EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DCEF92283FD0E008CF8EC /* main.m */; };
+		4C9BA6B9228429F400070C7D /* AutotypeURLHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C8DCEEE2283FD0C008CF8EC /* AutotypeURLHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C9BA6BA228429FC00070C7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C81391F2281FBC200092FD7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C8DCEED2283FD0C008CF8EC;
+			remoteInfo = AutotypeURLHelper;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		4CBA878522830960008515B1 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
-			dstSubfolderSpec = 16;
+			dstPath = "";
+			dstSubfolderSpec = 7;
 			files = (
+				4C9BA6B9228429F400070C7D /* AutotypeURLHelper.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +122,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4C9BA6BB228429FC00070C7D /* PBXTargetDependency */,
 			);
 			name = AutotypeURL;
 			productName = AutotypeURL;
@@ -211,6 +224,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C9BA6BB228429FC00070C7D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C8DCEED2283FD0C008CF8EC /* AutotypeURLHelper */;
+			targetProxy = 4C9BA6BA228429FC00070C7D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4C81392B2281FBC200092FD7 /* Debug */ = {

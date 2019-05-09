@@ -10,6 +10,7 @@
 
 static NSString *ATUChromeBundleIdentifier = @"com.google.Chrome";
 static NSString *ATUSafariBundleIdentifier = @"com.apple.Safari";
+static NSString *ATUHelperName = @"AutotypeURLHelper";
 
 @interface NSRunningApplication (ATUAutotypeURLAdditions)
 
@@ -59,10 +60,24 @@ static NSString *ATUSafariBundleIdentifier = @"com.apple.Safari";
     return @"";
   }
   
-  NSAppleScript *script = [[NSAppleScript alloc] initWithSource:scriptSource];
-  NSDictionary *errorDict;
-  NSAppleEventDescriptor *aed = [script executeAndReturnError:&errorDict];
-  return aed.stringValue;
+  [self _launchHelperApplication];
+  return @"";
+}
+
+- (void)_launchHelperApplication {
+  NSBundle *bundle = [NSBundle bundleForClass:self.class];
+  NSURL *helperBundleURL = [bundle URLForResource:ATUHelperName withExtension:@"app"];
+  NSBundle *helperBundle = [NSBundle bundleWithURL:helperBundleURL];
+  NSURL *helperExecuteableURL = helperBundle.executableURL;
+  
+  NSPipe *outputPipe = [NSPipe pipe];
+  NSTask *task = [[NSTask alloc] init];
+  task.launchPath = helperExecuteableURL.path;
+  task.standardOutput = outputPipe;
+  [task launch]; 
+  [task waitUntilExit];
+  NSFileHandle *fh = outputPipe.fileHandleForReading;
+  NSData *data = [fh readDataToEndOfFile];
 }
 
 @end

@@ -15,6 +15,7 @@
   NSDictionary *errorDict;
   NSAppleEventDescriptor *aed = [script executeAndReturnError:&errorDict];
   NSLog(@"%@", aed.stringValue);
+  [NSApp terminate:nil];
 }
 
 
