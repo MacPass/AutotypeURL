@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4C8139322281FD3900092FD7 /* ATUAutotypeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8139312281FD3900092FD7 /* ATUAutotypeURL.m */; };
+		4C93F3C022859C54005C8A3D /* ATUSafariExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C93F3BF22859C54005C8A3D /* ATUSafariExtractor.m */; };
+		4C93F3C322859E46005C8A3D /* ATUChromeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C93F3C222859E46005C8A3D /* ATUChromeExtractor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -15,6 +17,11 @@
 		4C81392A2281FBC200092FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C8139302281FD3900092FD7 /* ATUAutotypeURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATUAutotypeURL.h; sourceTree = "<group>"; };
 		4C8139312281FD3900092FD7 /* ATUAutotypeURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATUAutotypeURL.m; sourceTree = "<group>"; };
+		4C93F3BD22859AA7005C8A3D /* ATUURLExtraction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATUURLExtraction.h; sourceTree = "<group>"; };
+		4C93F3BE22859C54005C8A3D /* ATUSafariExtractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATUSafariExtractor.h; sourceTree = "<group>"; };
+		4C93F3BF22859C54005C8A3D /* ATUSafariExtractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATUSafariExtractor.m; sourceTree = "<group>"; };
+		4C93F3C122859E46005C8A3D /* ATUChromeExtractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATUChromeExtractor.h; sourceTree = "<group>"; };
+		4C93F3C222859E46005C8A3D /* ATUChromeExtractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATUChromeExtractor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +57,11 @@
 				4C81392A2281FBC200092FD7 /* Info.plist */,
 				4C8139302281FD3900092FD7 /* ATUAutotypeURL.h */,
 				4C8139312281FD3900092FD7 /* ATUAutotypeURL.m */,
+				4C93F3BD22859AA7005C8A3D /* ATUURLExtraction.h */,
+				4C93F3BE22859C54005C8A3D /* ATUSafariExtractor.h */,
+				4C93F3BF22859C54005C8A3D /* ATUSafariExtractor.m */,
+				4C93F3C122859E46005C8A3D /* ATUChromeExtractor.h */,
+				4C93F3C222859E46005C8A3D /* ATUChromeExtractor.m */,
 			);
 			path = AutotypeURL;
 			sourceTree = "<group>";
@@ -121,6 +133,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C8139322281FD3900092FD7 /* ATUAutotypeURL.m in Sources */,
+				4C93F3C022859C54005C8A3D /* ATUSafariExtractor.m in Sources */,
+				4C93F3C322859E46005C8A3D /* ATUChromeExtractor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

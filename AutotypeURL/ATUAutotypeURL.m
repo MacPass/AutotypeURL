@@ -7,76 +7,45 @@
 //
 
 #import "ATUAutotypeURL.h"
+#import "ATUSafariExtractor.h"
+#import "ATUChromeExtractor.h"
 
-static NSString *ATUChromeBundleIdentifier = @"com.google.Chrome";
-static NSString *ATUSafariBundleIdentifier = @"com.apple.Safari";
+@interface  ATUAutotypeURL ()
 
-@interface NSRunningApplication (ATUAutotypeURLAdditions)
-
-@property (nonatomic, readonly) BOOL atu_isSafari;
-@property (nonatomic, readonly) BOOL atu_isChrome;
-
-@end
-
-@implementation NSRunningApplication (ATUAutotypeURLAdditions)
-
-- (BOOL)atu_isSafari {
-    return [self.bundleIdentifier isEqualToString:ATUSafariBundleIdentifier];
-}
-
-- (BOOL)atu_isChrome {
-    return [self.bundleIdentifier isEqualToString:ATUChromeBundleIdentifier];
-}
+@property (strong) NSDictionary<NSString *, id<ATUURLExtraction>> *extractors;
 
 @end
 
 @implementation ATUAutotypeURL
 
+- (instancetype)initWithPluginHost:(MPPluginHost *)host {
+  self = [super initWithPluginHost:host];
+  if(self) {
+    ATUChromeExtractor *chrome = [[ATUChromeExtractor alloc] init];
+    ATUSafariExtractor *safari = [[ATUSafariExtractor alloc] init];
+    self.extractors = @{
+                        chrome.supportedBundleIdentifier : chrome,
+                        safari.supportedBundleIdentifier : safari
+                        };
+  }
+  return self;
+}
+
 - (BOOL)acceptsRunningApplication:(nonnull NSRunningApplication *)runningApplication {
-    if(runningApplication.atu_isChrome || runningApplication.atu_isSafari) {
-        return YES;
-    }
-    return NO;
+  id<ATUURLExtraction> extractor = self.extractors[runningApplication.bundleIdentifier];
+  return (extractor != nil);
 }
 
 - (nonnull NSString *)windowTitleForRunningApplication:(nonnull NSRunningApplication *)runningApplication {
-    if(runningApplication.atu_isSafari) {
-        return [self _getURLFromSafari];
-    }
-    if(runningApplication.atu_isChrome) {
-        return [self _getURLFromChrome];
-    }
-    return @"";
+  id<ATUURLExtraction> extractor = self.extractors[runningApplication.bundleIdentifier];
+  if(extractor) {
+    NSString *urlString = [extractor URLForRunningApplication:runningApplication];
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    return url.host.length > 0 ? url.host : @"";
+  }
+  return @"";
 }
 
-- (NSString *)_getURLFromSafari {
-    NSAppleScript *script = [[NSAppleScript alloc] initWithSource:@"tell application \"Safari\" to get URL of front document"];
-    NSAppleEventDescriptor *aed = [script executeAndReturnError:NULL];
-    NSString *rawURL = aed.stringValue;
-    
-    NSLog(@"%@ - raw URL Safari", rawURL);
-    NSLog(@"%@ - parsedURL Safari", [self _parseURL:rawURL]);
-    return [self _parseURL:rawURL];
-    
-    
-}
-
-- (NSString *)_getURLFromChrome {
-    NSAppleScript *script = [[NSAppleScript alloc] initWithSource:@"tell application \"Google Chrome\" to get URL of active tab of front window"];
-    NSAppleEventDescriptor *aed = [script executeAndReturnError:NULL];
-    NSString *rawURL = aed.stringValue;
-  
-    NSLog(@"%@ - raw URL Chrome", rawURL);
-    NSLog(@"%@ - parsedURL Chrome", [self _parseURL:rawURL]);
-    return [self _parseURL:rawURL];
-}
-//Additions for parsing the url subdomain.root.com
-- (NSString *)_parseURL: (NSString*) url {
-    NSURL *separatedURL = [[NSURL alloc] initWithString:url];
-    NSString *subDomIncluded = [separatedURL host];
-    return subDomIncluded;
-    
-}
 
 @end
 
