@@ -15,6 +15,9 @@
   NSDictionary *errorDict;
   NSAppleEventDescriptor *aed = [script executeAndReturnError:&errorDict];
   NSLog(@"%@", aed.stringValue);
+  NSLog(@"%@", errorDict);
+  NSFileHandle *output = [NSFileHandle fileHandleWithStandardOutput];
+  [output writeData:[aed.stringValue dataUsingEncoding:NSUTF8StringEncoding]];
   [NSApp terminate:nil];
 }
 

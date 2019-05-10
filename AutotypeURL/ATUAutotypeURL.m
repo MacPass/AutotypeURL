@@ -77,7 +77,8 @@ static NSString *ATUHelperName = @"AutotypeURLHelper";
   [task launch]; 
   [task waitUntilExit];
   NSFileHandle *fh = outputPipe.fileHandleForReading;
-  NSData *data = [fh readDataToEndOfFile];
+  NSString *output = [[NSString alloc] initWithData:[fh readDataToEndOfFile] encoding:NSUTF8StringEncoding];
+  NSLog(@"Output: %@", output);
 }
 
 @end
