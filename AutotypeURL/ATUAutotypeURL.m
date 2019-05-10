@@ -21,11 +21,11 @@ static NSString *ATUSafariBundleIdentifier = @"com.apple.Safari";
 @implementation NSRunningApplication (ATUAutotypeURLAdditions)
 
 - (BOOL)atu_isSafari {
-  return [self.bundleIdentifier isEqualToString:ATUSafariBundleIdentifier];
+    return [self.bundleIdentifier isEqualToString:ATUSafariBundleIdentifier];
 }
 
 - (BOOL)atu_isChrome {
-  return [self.bundleIdentifier isEqualToString:ATUChromeBundleIdentifier];
+    return [self.bundleIdentifier isEqualToString:ATUChromeBundleIdentifier];
 }
 
 @end
@@ -33,32 +33,50 @@ static NSString *ATUSafariBundleIdentifier = @"com.apple.Safari";
 @implementation ATUAutotypeURL
 
 - (BOOL)acceptsRunningApplication:(nonnull NSRunningApplication *)runningApplication {
-  if(runningApplication.atu_isChrome || runningApplication.atu_isSafari) {
-    return YES;
-  }
-  return NO;
+    if(runningApplication.atu_isChrome || runningApplication.atu_isSafari) {
+        return YES;
+    }
+    return NO;
 }
 
 - (nonnull NSString *)windowTitleForRunningApplication:(nonnull NSRunningApplication *)runningApplication {
-  if(runningApplication.atu_isSafari) {
-    return [self _getURLFromSafari];
-  }
-  if(runningApplication.atu_isChrome) {
-    return [self _getURLFromChrome];
-  }
-  return @"";
+    if(runningApplication.atu_isSafari) {
+        return [self _getURLFromSafari];
+    }
+    if(runningApplication.atu_isChrome) {
+        return [self _getURLFromChrome];
+    }
+    return @"";
 }
 
 - (NSString *)_getURLFromSafari {
-  NSAppleScript *script = [[NSAppleScript alloc] initWithSource:@"tell application \"Safari\" to get URL of front document"];
-  NSAppleEventDescriptor *aed = [script executeAndReturnError:NULL];
-  return aed.stringValue;
+    NSAppleScript *script = [[NSAppleScript alloc] initWithSource:@"tell application \"Safari\" to get URL of front document"];
+    NSAppleEventDescriptor *aed = [script executeAndReturnError:NULL];
+    NSString *rawURL = aed.stringValue;
+    
+    NSLog(@"%@ - raw URL Safari", rawURL);
+    NSLog(@"%@ - parsedURL Safari", [self _parseURL:rawURL]);
+    return [self _parseURL:rawURL];
+    
+    
 }
 
 - (NSString *)_getURLFromChrome {
-  NSAppleScript *script = [[NSAppleScript alloc] initWithSource:@"tell application \"Google Chrome\" to get URL of active tab of front window"];
-  NSAppleEventDescriptor *aed = [script executeAndReturnError:NULL];
-  return aed.stringValue;
+    NSAppleScript *script = [[NSAppleScript alloc] initWithSource:@"tell application \"Google Chrome\" to get URL of active tab of front window"];
+    NSAppleEventDescriptor *aed = [script executeAndReturnError:NULL];
+    NSString *rawURL = aed.stringValue;
+  
+    NSLog(@"%@ - raw URL Chrome", rawURL);
+    NSLog(@"%@ - parsedURL Chrome", [self _parseURL:rawURL]);
+    return [self _parseURL:rawURL];
+}
+//Additions for parsing the url subdomain.root.com
+- (NSString *)_parseURL: (NSString*) url {
+    NSURL *separatedURL = [[NSURL alloc] initWithString:url];
+    NSString *subDomIncluded = [separatedURL host];
+    return subDomIncluded;
+    
 }
 
 @end
+
