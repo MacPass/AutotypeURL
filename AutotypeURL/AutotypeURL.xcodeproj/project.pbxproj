@@ -1,0 +1,351 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C8139322281FD3900092FD7 /* ATUAutotypeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8139312281FD3900092FD7 /* ATUAutotypeURL.m */; };
+		4C93F3C022859C54005C8A3D /* ATUSafariExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C93F3BF22859C54005C8A3D /* ATUSafariExtractor.m */; };
+		4C93F3C322859E46005C8A3D /* ATUChromeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C93F3C222859E46005C8A3D /* ATUChromeExtractor.m */; };
+		7EAF2FBC22A6D66400277201 /* MPATUSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EAF2FBB22A6D66400277201 /* MPATUSettings.xib */; };
+		7EAF2FC022A6D69100277201 /* MPATUSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF2FBE22A6D69000277201 /* MPATUSettingsViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4C8139272281FBC200092FD7 /* AutotypeURL.mpplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutotypeURL.mpplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C81392A2281FBC200092FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C8139302281FD3900092FD7 /* ATUAutotypeURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATUAutotypeURL.h; sourceTree = "<group>"; };
+		4C8139312281FD3900092FD7 /* ATUAutotypeURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATUAutotypeURL.m; sourceTree = "<group>"; };
+		4C93F3BD22859AA7005C8A3D /* ATUURLExtraction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATUURLExtraction.h; sourceTree = "<group>"; };
+		4C93F3BE22859C54005C8A3D /* ATUSafariExtractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATUSafariExtractor.h; sourceTree = "<group>"; };
+		4C93F3BF22859C54005C8A3D /* ATUSafariExtractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATUSafariExtractor.m; sourceTree = "<group>"; };
+		4C93F3C122859E46005C8A3D /* ATUChromeExtractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATUChromeExtractor.h; sourceTree = "<group>"; };
+		4C93F3C222859E46005C8A3D /* ATUChromeExtractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATUChromeExtractor.m; sourceTree = "<group>"; };
+		7EAF2FBB22A6D66400277201 /* MPATUSettings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MPATUSettings.xib; sourceTree = "<group>"; };
+		7EAF2FBE22A6D69000277201 /* MPATUSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPATUSettingsViewController.m; sourceTree = "<group>"; };
+		7EAF2FBF22A6D69100277201 /* MPATUSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPATUSettingsViewController.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C8139242281FBC200092FD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C81391E2281FBC200092FD7 = {
+			isa = PBXGroup;
+			children = (
+				4C8139292281FBC200092FD7 /* AutotypeURL */,
+				4C8139282281FBC200092FD7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C8139282281FBC200092FD7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C8139272281FBC200092FD7 /* AutotypeURL.mpplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C8139292281FBC200092FD7 /* AutotypeURL */ = {
+			isa = PBXGroup;
+			children = (
+				7EAF2FBD22A6D68000277201 /* UI */,
+				4C81392A2281FBC200092FD7 /* Info.plist */,
+				4C8139302281FD3900092FD7 /* ATUAutotypeURL.h */,
+				4C8139312281FD3900092FD7 /* ATUAutotypeURL.m */,
+				4C93F3BD22859AA7005C8A3D /* ATUURLExtraction.h */,
+				4C93F3BE22859C54005C8A3D /* ATUSafariExtractor.h */,
+				4C93F3BF22859C54005C8A3D /* ATUSafariExtractor.m */,
+				4C93F3C122859E46005C8A3D /* ATUChromeExtractor.h */,
+				4C93F3C222859E46005C8A3D /* ATUChromeExtractor.m */,
+			);
+			path = AutotypeURL;
+			sourceTree = "<group>";
+		};
+		7EAF2FBD22A6D68000277201 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				7EAF2FBF22A6D69100277201 /* MPATUSettingsViewController.h */,
+				7EAF2FBE22A6D69000277201 /* MPATUSettingsViewController.m */,
+				7EAF2FBB22A6D66400277201 /* MPATUSettings.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C8139262281FBC200092FD7 /* AutotypeURL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C81392D2281FBC200092FD7 /* Build configuration list for PBXNativeTarget "AutotypeURL" */;
+			buildPhases = (
+				4C8139232281FBC200092FD7 /* Sources */,
+				4C8139242281FBC200092FD7 /* Frameworks */,
+				4C8139252281FBC200092FD7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutotypeURL;
+			productName = AutotypeURL;
+			productReference = 4C8139272281FBC200092FD7 /* AutotypeURL.mpplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C81391F2281FBC200092FD7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "HicknHack Software GmbH";
+				TargetAttributes = {
+					4C8139262281FBC200092FD7 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 4C8139222281FBC200092FD7 /* Build configuration list for PBXProject "AutotypeURL" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4C81391E2281FBC200092FD7;
+			productRefGroup = 4C8139282281FBC200092FD7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C8139262281FBC200092FD7 /* AutotypeURL */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C8139252281FBC200092FD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EAF2FBC22A6D66400277201 /* MPATUSettings.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C8139232281FBC200092FD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C8139322281FD3900092FD7 /* ATUAutotypeURL.m in Sources */,
+				4C93F3C022859C54005C8A3D /* ATUSafariExtractor.m in Sources */,
+				4C93F3C322859E46005C8A3D /* ATUChromeExtractor.m in Sources */,
+				7EAF2FC022A6D69100277201 /* MPATUSettingsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4C81392B2281FBC200092FD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../MacPass/**";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4C81392C2281FBC200092FD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../MacPass/**";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4C81392E2281FBC200092FD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = XXSQT4Y6X2;
+				INFOPLIST_FILE = AutotypeURL/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hicknhacksoftware.AutotypeURL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = mpplugin;
+			};
+			name = Debug;
+		};
+		4C81392F2281FBC200092FD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = XXSQT4Y6X2;
+				INFOPLIST_FILE = AutotypeURL/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hicknhacksoftware.AutotypeURL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = mpplugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C8139222281FBC200092FD7 /* Build configuration list for PBXProject "AutotypeURL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C81392B2281FBC200092FD7 /* Debug */,
+				4C81392C2281FBC200092FD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C81392D2281FBC200092FD7 /* Build configuration list for PBXNativeTarget "AutotypeURL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C81392E2281FBC200092FD7 /* Debug */,
+				4C81392F2281FBC200092FD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C81391F2281FBC200092FD7 /* Project object */;
+}
