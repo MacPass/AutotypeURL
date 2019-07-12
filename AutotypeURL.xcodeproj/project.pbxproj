@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4C8139322281FD3900092FD7 /* ATUAutotypeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8139312281FD3900092FD7 /* ATUAutotypeURL.m */; };
+		4C93F3C022859C54005C8A3D /* ATUSafariExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C93F3BF22859C54005C8A3D /* ATUSafariExtractor.m */; };
+		4C93F3C322859E46005C8A3D /* ATUChromeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C93F3C222859E46005C8A3D /* ATUChromeExtractor.m */; };
+		7E9B915822D911BA0017A2BA /* ATUSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B915622D911B90017A2BA /* ATUSettingsViewController.m */; };
+		7E9B915922D911BA0017A2BA /* AutotypeURLSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B915722D911BA0017A2BA /* AutotypeURLSettings.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -15,6 +19,14 @@
 		4C81392A2281FBC200092FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C8139302281FD3900092FD7 /* ATUAutotypeURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATUAutotypeURL.h; sourceTree = "<group>"; };
 		4C8139312281FD3900092FD7 /* ATUAutotypeURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATUAutotypeURL.m; sourceTree = "<group>"; };
+		4C93F3BD22859AA7005C8A3D /* ATUURLExtraction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATUURLExtraction.h; sourceTree = "<group>"; };
+		4C93F3BE22859C54005C8A3D /* ATUSafariExtractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATUSafariExtractor.h; sourceTree = "<group>"; };
+		4C93F3BF22859C54005C8A3D /* ATUSafariExtractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATUSafariExtractor.m; sourceTree = "<group>"; };
+		4C93F3C122859E46005C8A3D /* ATUChromeExtractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATUChromeExtractor.h; sourceTree = "<group>"; };
+		4C93F3C222859E46005C8A3D /* ATUChromeExtractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATUChromeExtractor.m; sourceTree = "<group>"; };
+		7E9B915522D911B90017A2BA /* ATUSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATUSettingsViewController.h; sourceTree = "<group>"; };
+		7E9B915622D911B90017A2BA /* ATUSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATUSettingsViewController.m; sourceTree = "<group>"; };
+		7E9B915722D911BA0017A2BA /* AutotypeURLSettings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutotypeURLSettings.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,11 +59,27 @@
 		4C8139292281FBC200092FD7 /* AutotypeURL */ = {
 			isa = PBXGroup;
 			children = (
+				7E9B915422D911A80017A2BA /* Settings */,
 				4C81392A2281FBC200092FD7 /* Info.plist */,
 				4C8139302281FD3900092FD7 /* ATUAutotypeURL.h */,
 				4C8139312281FD3900092FD7 /* ATUAutotypeURL.m */,
+				4C93F3BD22859AA7005C8A3D /* ATUURLExtraction.h */,
+				4C93F3BE22859C54005C8A3D /* ATUSafariExtractor.h */,
+				4C93F3BF22859C54005C8A3D /* ATUSafariExtractor.m */,
+				4C93F3C122859E46005C8A3D /* ATUChromeExtractor.h */,
+				4C93F3C222859E46005C8A3D /* ATUChromeExtractor.m */,
 			);
 			path = AutotypeURL;
+			sourceTree = "<group>";
+		};
+		7E9B915422D911A80017A2BA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7E9B915722D911BA0017A2BA /* AutotypeURLSettings.xib */,
+				7E9B915522D911B90017A2BA /* ATUSettingsViewController.h */,
+				7E9B915622D911B90017A2BA /* ATUSettingsViewController.m */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,6 +122,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 4C81391E2281FBC200092FD7;
 			productRefGroup = 4C8139282281FBC200092FD7 /* Products */;
@@ -110,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E9B915922D911BA0017A2BA /* AutotypeURLSettings.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +151,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C8139322281FD3900092FD7 /* ATUAutotypeURL.m in Sources */,
+				7E9B915822D911BA0017A2BA /* ATUSettingsViewController.m in Sources */,
+				4C93F3C022859C54005C8A3D /* ATUSafariExtractor.m in Sources */,
+				4C93F3C322859E46005C8A3D /* ATUChromeExtractor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,13 +294,18 @@
 		4C81392E2281FBC200092FD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DEVELOPMENT_TEAM = XXSQT4Y6X2;
+				DSTROOT = "$(HOME)";
 				INFOPLIST_FILE = AutotypeURL/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				INSTALL_PATH = "/Library/Application Support/MacPass";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hicknhacksoftware.AutotypeURL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = mpplugin;
 			};
 			name = Debug;
@@ -275,13 +313,18 @@
 		4C81392F2281FBC200092FD7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DEVELOPMENT_TEAM = XXSQT4Y6X2;
+				DSTROOT = "$(HOME)";
 				INFOPLIST_FILE = AutotypeURL/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				INSTALL_PATH = "/Library/Application Support/MacPass";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hicknhacksoftware.AutotypeURL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = mpplugin;
 			};
 			name = Release;
