@@ -106,6 +106,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 4C81391E2281FBC200092FD7;
 			productRefGroup = 4C8139282281FBC200092FD7 /* Products */;
@@ -277,11 +278,13 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
 				INFOPLIST_FILE = AutotypeURL/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				INSTALL_PATH = "/Library/Application Support/MacPass";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hicknhacksoftware.AutotypeURL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = mpplugin;
 			};
 			name = Debug;
@@ -291,11 +294,13 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
 				INFOPLIST_FILE = AutotypeURL/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				INSTALL_PATH = "/Library/Application Support/MacPass";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hicknhacksoftware.AutotypeURL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = mpplugin;
 			};
 			name = Release;
