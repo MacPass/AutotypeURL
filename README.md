@@ -51,6 +51,11 @@ xcodebuild
 The Plugin is moved to the plugin folder of MacPass automacially.
 ````~/Library/Application Support/MacPass/AutotypeURL.mpplugin````
 
+
+
+![](aturl-prefs.png)
+
+
 ## Contributors
 
 Idea and initial Apple Script is based on the work of **@georgesnow** https://github.com/georgesnow/MPSafariAF
