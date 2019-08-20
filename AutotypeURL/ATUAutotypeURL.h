@@ -11,13 +11,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
-
 FOUNDATION_EXPORT NSString *const kMPASettingsKeyFullMatch;
 
-
 @interface ATUAutotypeURL : MPPlugin <MPPluginSettings, MPAutotypeWindowTitleResolverPlugin>;
-
 
 @end
 

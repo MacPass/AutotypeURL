@@ -8,12 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @class ATUAutotypeURL;
 
 @interface ATUSettingsViewController : NSViewController
-
-@property (weak) ATUAutotypeURL *plugin;
-
 
 @end

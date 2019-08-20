@@ -6,59 +6,48 @@
 //  Copyright © 2019 George Snow All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "ATUSettingsViewController.h"
 #import "ATUAutotypeURL.h"
 
 @interface ATUSettingsViewController ()
 
+@property (strong) IBOutlet NSButton *useCompleteURLAsWindowTitleButton;
+@property (strong) IBOutlet NSButton *useURLHostAsWindowTitleButton;
 
-
-
-@property (weak) IBOutlet NSButton *fullmatchEnableCheck;
-
-
-@property (nonatomic) BOOL fullmatchEnabled;
-
+- (IBAction)toggleWindowTitleBehaviour:(id)sender;
 
 @end
 
 @implementation ATUSettingsViewController
 
 - (void)dealloc {
-  NSLog(@"%@ dealloc", [self class]);
-
-
-  [self.fullmatchEnableCheck unbind:NSValueBinding];
-  
+  [self.useCompleteURLAsWindowTitleButton unbind:NSValueBinding];
 }
 
 - (NSBundle *)nibBundle {
-//  NSLog(@"nib bundle bundleforclass %@", self.className);
-  return [NSBundle bundleForClass:[self class]];
+  return [NSBundle bundleForClass:self.class];
 }
 
 - (NSString *)nibName {
   return @"AutotypeURLSettings";
 }
 
-- (void)awakeFromNib {
-//  NSLog(@"awake from nib");
-  static BOOL didAwake = NO;
-  if(!didAwake) {
-
-    NSUserDefaultsController *defaultsController = [NSUserDefaultsController sharedUserDefaultsController];
-    [self.fullmatchEnableCheck bind:NSValueBinding
-                toObject:defaultsController
-             withKeyPath:[NSString stringWithFormat:@"values.%@", kMPASettingsKeyFullMatch]
-                 options:nil];
-
-    didAwake = YES;
+- (void)viewDidLoad {
+  BOOL useCompletURL = [NSUserDefaults.standardUserDefaults boolForKey:kMPASettingsKeyFullMatch];
+  if(useCompletURL) {
+    self.useCompleteURLAsWindowTitleButton.state = NSOnState;
+    self.useURLHostAsWindowTitleButton.state = NSOffState;
+  }
+  else {
+    self.useCompleteURLAsWindowTitleButton.state = NSOffState;
+    self.useURLHostAsWindowTitleButton.state = NSOnState;
   }
 }
 
-
-
+- (void)toggleWindowTitleBehaviour:(id)sender {
+  BOOL useCompletURL = self.useCompleteURLAsWindowTitleButton.state == NSOnState;
+  [NSUserDefaults.standardUserDefaults setBool:useCompletURL forKey:kMPASettingsKeyFullMatch];
+}
 
 
 @end
