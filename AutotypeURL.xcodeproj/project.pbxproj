@@ -10,6 +10,8 @@
 		4C8139322281FD3900092FD7 /* ATUAutotypeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8139312281FD3900092FD7 /* ATUAutotypeURL.m */; };
 		4C93F3C022859C54005C8A3D /* ATUSafariExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C93F3BF22859C54005C8A3D /* ATUSafariExtractor.m */; };
 		4C93F3C322859E46005C8A3D /* ATUChromeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C93F3C222859E46005C8A3D /* ATUChromeExtractor.m */; };
+		7E9B915822D911BA0017A2BA /* ATUSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B915622D911B90017A2BA /* ATUSettingsViewController.m */; };
+		7E9B915922D911BA0017A2BA /* AutotypeURLSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B915722D911BA0017A2BA /* AutotypeURLSettings.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,9 @@
 		4C93F3BF22859C54005C8A3D /* ATUSafariExtractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATUSafariExtractor.m; sourceTree = "<group>"; };
 		4C93F3C122859E46005C8A3D /* ATUChromeExtractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATUChromeExtractor.h; sourceTree = "<group>"; };
 		4C93F3C222859E46005C8A3D /* ATUChromeExtractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATUChromeExtractor.m; sourceTree = "<group>"; };
+		7E9B915522D911B90017A2BA /* ATUSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATUSettingsViewController.h; sourceTree = "<group>"; };
+		7E9B915622D911B90017A2BA /* ATUSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATUSettingsViewController.m; sourceTree = "<group>"; };
+		7E9B915722D911BA0017A2BA /* AutotypeURLSettings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutotypeURLSettings.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +59,7 @@
 		4C8139292281FBC200092FD7 /* AutotypeURL */ = {
 			isa = PBXGroup;
 			children = (
+				7E9B915422D911A80017A2BA /* Settings */,
 				4C81392A2281FBC200092FD7 /* Info.plist */,
 				4C8139302281FD3900092FD7 /* ATUAutotypeURL.h */,
 				4C8139312281FD3900092FD7 /* ATUAutotypeURL.m */,
@@ -66,6 +72,16 @@
 			path = AutotypeURL;
 			sourceTree = "<group>";
 		};
+		7E9B915422D911A80017A2BA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7E9B915722D911BA0017A2BA /* AutotypeURLSettings.xib */,
+				7E9B915522D911B90017A2BA /* ATUSettingsViewController.h */,
+				7E9B915622D911B90017A2BA /* ATUSettingsViewController.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -75,6 +91,7 @@
 			buildPhases = (
 				4C8139232281FBC200092FD7 /* Sources */,
 				4C8139242281FBC200092FD7 /* Frameworks */,
+				4C6B333A230C32EE00A6C127 /* Versioning */,
 				4C8139252281FBC200092FD7 /* Resources */,
 			);
 			buildRules = (
@@ -123,10 +140,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E9B915922D911BA0017A2BA /* AutotypeURLSettings.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C6B333A230C32EE00A6C127 /* Versioning */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Versioning;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=`sh /etc/profile; which git`\nbranch_name=`$git rev-parse --abbrev-ref HEAD`\ngit_count=`$git rev-list $branch_name |wc -l | sed 's/^ *//;s/ *$//'`\n\nbuild_number=\"${git_count}\"\nif [ $CONFIGURATION != \"Release\" ] || [ $branch_name != \"master\" ]; then\nbuild_number+=\"-$branch_name\"\nfi\nif [ \"$CI\" = \"true\" ]; then\nbuild_date=`date +\"%Y%m%d%H%m%S\"`\nbuild_number=\"$build_date-continuous\"\nfi\n\nplist=\"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\ndsym_plist=\"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist\"\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build_number\" \"$plist\"\nif [ -f \"$DSYM_INFO_PLIST\" ] ; then\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build_number\" \"$dsym_plist\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4C8139232281FBC200092FD7 /* Sources */ = {
@@ -134,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C8139322281FD3900092FD7 /* ATUAutotypeURL.m in Sources */,
+				7E9B915822D911BA0017A2BA /* ATUSettingsViewController.m in Sources */,
 				4C93F3C022859C54005C8A3D /* ATUSafariExtractor.m in Sources */,
 				4C93F3C322859E46005C8A3D /* ATUChromeExtractor.m in Sources */,
 			);
@@ -199,7 +239,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -262,7 +302,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = (
@@ -278,6 +318,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 0.2;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = "$(HOME)";
 				INFOPLIST_FILE = AutotypeURL/Info.plist;
@@ -292,8 +333,10 @@
 		4C81392F2281FBC200092FD7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 0.2;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = "$(HOME)";
 				INFOPLIST_FILE = AutotypeURL/Info.plist;

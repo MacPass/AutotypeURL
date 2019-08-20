@@ -15,9 +15,9 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>UNKNOWN</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2019 HicknHack Software GmbH. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
