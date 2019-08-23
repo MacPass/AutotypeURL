@@ -12,13 +12,11 @@
 #import "ATUSettingsViewController.h"
 
 
-
-NSString *const kMPASettingsKeyFullMatch          = @"kMPASettingsKeyFullMatch";
+NSString *const kMPASettingsKeyFullMatch = @"kMPASettingsKeyFullMatch";
 
 @interface  ATUAutotypeURL ()
 
 @property (strong) NSDictionary<NSString *, id<ATUURLExtraction>> *extractors;
-@property (strong) ATUSettingsViewController *settingsViewController;
 
 @property (nonatomic) BOOL fullMatchEnabled;
 
@@ -54,38 +52,27 @@ NSString *const kMPASettingsKeyFullMatch          = @"kMPASettingsKeyFullMatch";
 
 - (nonnull NSString *)windowTitleForRunningApplication:(nonnull NSRunningApplication *)runningApplication {
   id<ATUURLExtraction> extractor = self.extractors[runningApplication.bundleIdentifier];
-  NSUserDefaults *defaultsController = [NSUserDefaults standardUserDefaults];
-  BOOL fullMatch = [defaultsController boolForKey:kMPASettingsKeyFullMatch];
   
-  ;
-  if(extractor) {
-    NSString *urlString = [extractor URLForRunningApplication:runningApplication];
-    NSURL *url = [[NSURL alloc] initWithString:urlString];
-    
-    if (fullMatch == NO) {
-      NSLog(@"subdom match %@", url.host);
-      return url.host.length > 0 ? url.host : @"";
-    }
-    else {
-      NSLog(@"full match match %@", urlString);
-      return url.host.length > 0 ? urlString : @"";
-    }
+  if(!extractor) {
+    return @"";
   }
-  return @"";
+  
+  BOOL fullMatch = [NSUserDefaults.standardUserDefaults boolForKey:kMPASettingsKeyFullMatch];
+  
+  NSString *urlString = [extractor URLForRunningApplication:runningApplication];
+  NSURL *url = [[NSURL alloc] initWithString:urlString];
+  
+  if(fullMatch) {
+    return url.host.length > 0 ? urlString : @"";
+  }
+  return url.host.length > 0 ? url.host : @"";
 }
 
 - (NSViewController *)settingsViewController {
   if(!_settingsViewController) {
-    self.settingsViewController = [[ATUSettingsViewController alloc] init];
-    self.settingsViewController.plugin = self;
+    _settingsViewController = [[ATUSettingsViewController alloc] init];
   }
-
   return _settingsViewController;
-}
-
-- (void)setSettingsViewController:(ATUSettingsViewController *)settingsViewController {
-  
-  _settingsViewController = settingsViewController;
 }
 
 
