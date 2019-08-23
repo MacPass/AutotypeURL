@@ -53,7 +53,7 @@ The Plugin is moved to the plugin folder of MacPass automacially.
 
 
 
-![](aturl-prefs.png)
+![](aturl-settings.png)
 
 
 ## Contributors
