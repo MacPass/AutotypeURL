@@ -91,8 +91,8 @@
 			buildPhases = (
 				4C8139232281FBC200092FD7 /* Sources */,
 				4C8139242281FBC200092FD7 /* Frameworks */,
-				4C6B333A230C32EE00A6C127 /* Versioning */,
 				4C8139252281FBC200092FD7 /* Resources */,
+				4C6B333A230C32EE00A6C127 /* Versioning */,
 			);
 			buildRules = (
 			);
@@ -155,6 +155,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}",
 			);
 			name = Versioning;
 			outputFileListPaths = (
@@ -316,15 +317,17 @@
 		4C81392E2281FBC200092FD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEPLOYMENT_LOCATION = YES;
+				DEVELOPMENT_TEAM = "";
 				DSTROOT = "$(HOME)";
 				INFOPLIST_FILE = AutotypeURL/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/MacPass";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hicknhacksoftware.AutotypeURL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = mpplugin;
 			};
@@ -333,16 +336,17 @@
 		4C81392F2281FBC200092FD7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEPLOYMENT_LOCATION = YES;
+				DEVELOPMENT_TEAM = "";
 				DSTROOT = "$(HOME)";
 				INFOPLIST_FILE = AutotypeURL/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/MacPass";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hicknhacksoftware.AutotypeURL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = mpplugin;
 			};
