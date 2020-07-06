@@ -6,16 +6,12 @@ A plugin to extract the URL from the browser to enhance Autotype matching in [Ma
 
 ### Requirements
 
-MacPass build from source (branch feature/autotype_plugin)
+MacPass 0.7.10 or newer
 
 ### Using a precompiled version
 
-Currently there is not precompiled version available.
-
-<!--- 
-Download the latest release from the [Releases page](https://github.com/MacPass/AutotypeURL/releases), extract, and copy the resulting file to the MacPass plugin folder at `~/Library/Application Support/MacPass/`. Restart MacPass if you're already running it.
-Alternatively you can use MacPass and install the plugin there.
--->
+AutotypeURL is available in MacPass via the plugin perefences. Browse the plugin resporitoy to download the latest release.
+Or download the latest release from the [Releases page](https://github.com/MacPass/AutotypeURL/releases), extract and copy the resulting file to the MacPass plugin folder at `~/Library/Application Support/MacPass/`. Then restart MacPass if you're already running it.
 
 ### Building from source
 
@@ -51,10 +47,7 @@ xcodebuild
 The Plugin is moved to the plugin folder of MacPass automacially.
 ````~/Library/Application Support/MacPass/AutotypeURL.mpplugin````
 
-
-
 ![](aturl-settings.png)
-
 
 ## Contributors
 
@@ -64,7 +57,7 @@ Idea and initial Apple Script is based on the work of **@georgesnow** https://gi
 
 The MIT License (MIT)
 
-Copyright (c) 2019 Michael Starke, HicknHack Software GmbH
+Copyright (c) 2019-2020 Michael Starke, HicknHack Software GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
