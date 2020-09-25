@@ -2,6 +2,11 @@
 
 A plugin to extract the URL from the browser to enhance Autotype matching in [MacPass](https://github.com/mstarke/MacPass)
 
+## Supported Browsers
+
+* Chrome
+* Safari
+
 ## Installation
 
 ### Requirements
