@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol ATUURLExtraction <NSObject>
 
 @required
-@property (readonly,nonatomic) NSString *supportedBundleIdentifier;
+@property (readonly, nonatomic) NSArray<NSString *> *supportedBundleIdentifiers;
 - (NSString *)URLForRunningApplication:(NSRunningApplication *)runningApplication;
 
 @end

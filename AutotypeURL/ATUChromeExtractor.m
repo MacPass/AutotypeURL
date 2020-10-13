@@ -10,18 +10,20 @@
 #import "ATUChromeExtractor.h"
 
 static NSString *ATUChromeBundleIdentifier = @"com.google.Chrome";
+static NSString *ATUBraveBundleIdentifier = @"com.brave.Browser";
 
 @implementation ATUChromeExtractor
 
-- (NSString *)supportedBundleIdentifier {
-  return ATUChromeBundleIdentifier;
+- (NSArray<NSString *> *)supportedBundleIdentifiers {
+  return @[ATUChromeBundleIdentifier, ATUBraveBundleIdentifier];
 }
 
-- (nonnull NSString *)URLForRunningApplication:(nonnull NSRunningApplication *)runningApplication { 
-  if(![runningApplication.bundleIdentifier isEqualToString:self.supportedBundleIdentifier]) {
+- (nonnull NSString *)URLForRunningApplication:(nonnull NSRunningApplication *)runningApplication {
+  if(![self.supportedBundleIdentifiers containsObject:runningApplication.bundleIdentifier]) {
     return @"";
   }
-  NSAppleScript *script = [[NSAppleScript alloc] initWithSource:@"tell application \"Google Chrome\" to get URL of active tab of front window"];
+  NSString *source = [NSString stringWithFormat:@"tell application \"%@\" to get URL of active tab of front window", runningApplication.localizedName];
+  NSAppleScript *script = [[NSAppleScript alloc] initWithSource:source];
   NSAppleEventDescriptor *aed = [script executeAndReturnError:NULL];
   NSString *urlString = aed.stringValue;
   return urlString == nil ? @"" : urlString;

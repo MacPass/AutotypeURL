@@ -16,7 +16,7 @@ NSString *const kMPASettingsKeyFullMatch = @"kMPASettingsKeyFullMatch";
 
 @interface  ATUAutotypeURL ()
 
-@property (strong) NSDictionary<NSString *, id<ATUURLExtraction>> *extractors;
+@property (strong) NSArray<id<ATUURLExtraction>> *extractors;
 
 @property (nonatomic) BOOL fullMatchEnabled;
 
@@ -33,25 +33,18 @@ NSString *const kMPASettingsKeyFullMatch = @"kMPASettingsKeyFullMatch";
 - (instancetype)initWithPluginHost:(MPPluginHost *)host {
   self = [super initWithPluginHost:host];
   if(self) {
-    
-    
-    ATUChromeExtractor *chrome = [[ATUChromeExtractor alloc] init];
-    ATUSafariExtractor *safari = [[ATUSafariExtractor alloc] init];
-    self.extractors = @{
-                        chrome.supportedBundleIdentifier : chrome,
-                        safari.supportedBundleIdentifier : safari
-                        };
+    self.extractors = @[[[ATUChromeExtractor alloc] init], [[ATUSafariExtractor alloc] init]];
   }
   return self;
 }
 
 - (BOOL)acceptsRunningApplication:(nonnull NSRunningApplication *)runningApplication {
-  id<ATUURLExtraction> extractor = self.extractors[runningApplication.bundleIdentifier];
+  id<ATUURLExtraction> extractor = [self _extractorForBundleIdentifier:runningApplication.bundleIdentifier];
   return (extractor != nil);
 }
 
 - (nonnull NSString *)windowTitleForRunningApplication:(nonnull NSRunningApplication *)runningApplication {
-  id<ATUURLExtraction> extractor = self.extractors[runningApplication.bundleIdentifier];
+  id<ATUURLExtraction> extractor = [self _extractorForBundleIdentifier:runningApplication.bundleIdentifier];
   
   if(!extractor) {
     return @"";
@@ -73,6 +66,15 @@ NSString *const kMPASettingsKeyFullMatch = @"kMPASettingsKeyFullMatch";
     _settingsViewController = [[ATUSettingsViewController alloc] init];
   }
   return _settingsViewController;
+}
+
+- (id<ATUURLExtraction>)_extractorForBundleIdentifier:(NSString*)bundleIdentifier {
+  for(id<ATUURLExtraction> extractor in self.extractors) {
+    if([extractor.supportedBundleIdentifiers containsObject:bundleIdentifier]) {
+      return extractor;
+    }
+  }
+  return nil;
 }
 
 

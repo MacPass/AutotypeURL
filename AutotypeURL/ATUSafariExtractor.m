@@ -13,12 +13,12 @@ static NSString *ATUSafariBundleIdentifier = @"com.apple.Safari";
 
 @implementation ATUSafariExtractor
 
-- (NSString *)supportedBundleIdentifier {
-  return ATUSafariBundleIdentifier;
+- (NSArray<NSString *>*)supportedBundleIdentifiers {
+  return @[ATUSafariBundleIdentifier];
 }
 
 - (nonnull NSString *)URLForRunningApplication:(nonnull NSRunningApplication *)runningApplication {
-  if(![runningApplication.bundleIdentifier isEqualToString:self.supportedBundleIdentifier]) {
+  if(![self.supportedBundleIdentifiers containsObject:runningApplication.bundleIdentifier]) {
     return @"";
   }
   NSAppleScript *script = [[NSAppleScript alloc] initWithSource:@"tell application \"Safari\" to get URL of front document"];
