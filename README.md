@@ -5,6 +5,7 @@ A plugin to extract the URL from the browser to enhance Autotype matching in [Ma
 ## Supported Browsers
 
 * Chrome
+* Brave
 * Safari
 
 ## Installation
