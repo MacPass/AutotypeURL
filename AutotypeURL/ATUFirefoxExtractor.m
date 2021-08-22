@@ -24,8 +24,9 @@ static NSString *ATUFirefoxBundleIdentifier = @"org.mozilla.firefox";
   NSAppleScript *script = [[NSAppleScript alloc] initWithSource:@"tell application \"System Events\"\n \
                            tell application \"Firefox\" to activate\n \
                            tell application \"System Events\"\n \
-                               keystroke \"l\" using command down\n \
-                               keystroke \"c\" using command down\n \
+                               keystroke \"l\" using command down\n\
+                               keystroke \"c\" using command down\n\
+                               keystroke (ASCII character 9)\n\
                            end tell\n\
                            delay 0.5\n\
                            return the clipboard\n\
