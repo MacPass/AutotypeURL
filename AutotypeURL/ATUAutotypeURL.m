@@ -8,6 +8,7 @@
 
 #import "ATUAutotypeURL.h"
 #import "ATUSafariExtractor.h"
+#import "ATUFirefoxExtractor.h"
 #import "ATUChromeExtractor.h"
 #import "ATUSettingsViewController.h"
 
@@ -33,7 +34,7 @@ NSString *const kMPASettingsKeyFullMatch = @"kMPASettingsKeyFullMatch";
 - (instancetype)initWithPluginHost:(MPPluginHost *)host {
   self = [super initWithPluginHost:host];
   if(self) {
-    self.extractors = @[[[ATUChromeExtractor alloc] init], [[ATUSafariExtractor alloc] init]];
+    self.extractors = @[[[ATUChromeExtractor alloc] init], [[ATUSafariExtractor alloc] init], [[ATUFirefoxExtractor alloc] init]];
   }
   return self;
 }

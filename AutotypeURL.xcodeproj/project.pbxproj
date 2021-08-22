@@ -12,6 +12,8 @@
 		4C93F3C322859E46005C8A3D /* ATUChromeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C93F3C222859E46005C8A3D /* ATUChromeExtractor.m */; };
 		7E9B915822D911BA0017A2BA /* ATUSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B915622D911B90017A2BA /* ATUSettingsViewController.m */; };
 		7E9B915922D911BA0017A2BA /* AutotypeURLSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B915722D911BA0017A2BA /* AutotypeURLSettings.xib */; };
+		D5328CBB26D296E100C318AC /* ATUFirefoxExtractor.h in Sources */ = {isa = PBXBuildFile; fileRef = D5328CBA26D296E100C318AC /* ATUFirefoxExtractor.h */; };
+		D5328CBD26D2971600C318AC /* ATUFirefoxExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = D5328CBC26D2971600C318AC /* ATUFirefoxExtractor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		7E9B915522D911B90017A2BA /* ATUSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATUSettingsViewController.h; sourceTree = "<group>"; };
 		7E9B915622D911B90017A2BA /* ATUSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATUSettingsViewController.m; sourceTree = "<group>"; };
 		7E9B915722D911BA0017A2BA /* AutotypeURLSettings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutotypeURLSettings.xib; sourceTree = "<group>"; };
+		D5328CBA26D296E100C318AC /* ATUFirefoxExtractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATUFirefoxExtractor.h; sourceTree = "<group>"; };
+		D5328CBC26D2971600C318AC /* ATUFirefoxExtractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATUFirefoxExtractor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				4C8139312281FD3900092FD7 /* ATUAutotypeURL.m */,
 				4C93F3BD22859AA7005C8A3D /* ATUURLExtraction.h */,
 				4C93F3BE22859C54005C8A3D /* ATUSafariExtractor.h */,
+				D5328CBA26D296E100C318AC /* ATUFirefoxExtractor.h */,
+				D5328CBC26D2971600C318AC /* ATUFirefoxExtractor.m */,
 				4C93F3BF22859C54005C8A3D /* ATUSafariExtractor.m */,
 				4C93F3C122859E46005C8A3D /* ATUChromeExtractor.h */,
 				4C93F3C222859E46005C8A3D /* ATUChromeExtractor.m */,
@@ -175,9 +181,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C8139322281FD3900092FD7 /* ATUAutotypeURL.m in Sources */,
+				D5328CBD26D2971600C318AC /* ATUFirefoxExtractor.m in Sources */,
 				7E9B915822D911BA0017A2BA /* ATUSettingsViewController.m in Sources */,
 				4C93F3C022859C54005C8A3D /* ATUSafariExtractor.m in Sources */,
 				4C93F3C322859E46005C8A3D /* ATUChromeExtractor.m in Sources */,
+				D5328CBB26D296E100C318AC /* ATUFirefoxExtractor.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
