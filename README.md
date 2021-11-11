@@ -4,9 +4,10 @@ A plugin to extract the URL from the browser to enhance Autotype matching in [Ma
 
 ## Supported Browsers
 
-* Chrome
 * Brave
+* Chrome
 * Edge
+* Firefox
 * Safari
 
 ## Installation
@@ -64,7 +65,7 @@ Idea and initial Apple Script is based on the work of **@georgesnow** https://gi
 
 The MIT License (MIT)
 
-Copyright (c) 2019-2020 Michael Starke, HicknHack Software GmbH
+Copyright (c) 2019-2021 Michael Starke, HicknHack Software GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
