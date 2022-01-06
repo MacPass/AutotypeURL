@@ -12,11 +12,12 @@
 static NSString *ATUChromeBundleIdentifier = @"com.google.Chrome";
 static NSString *ATUBraveBundleIdentifier = @"com.brave.Browser";
 static NSString *ATUEdgeBundleIdentifier = @"com.microsoft.edgemac";
+static NSString *ATUChromiumBundleIdentifier = @"org.chromium.Chromium";
 
 @implementation ATUChromeExtractor
 
 - (NSArray<NSString *> *)supportedBundleIdentifiers {
-  return @[ATUChromeBundleIdentifier, ATUBraveBundleIdentifier, ATUEdgeBundleIdentifier];
+  return @[ATUChromeBundleIdentifier, ATUBraveBundleIdentifier, ATUEdgeBundleIdentifier, ATUChromiumBundleIdentifier];
 }
 
 - (nonnull NSString *)URLForRunningApplication:(nonnull NSRunningApplication *)runningApplication {
