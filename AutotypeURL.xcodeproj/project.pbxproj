@@ -10,6 +10,7 @@
 		4C8139322281FD3900092FD7 /* ATUAutotypeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8139312281FD3900092FD7 /* ATUAutotypeURL.m */; };
 		4C93F3C022859C54005C8A3D /* ATUSafariExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C93F3BF22859C54005C8A3D /* ATUSafariExtractor.m */; };
 		4C93F3C322859E46005C8A3D /* ATUChromeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C93F3C222859E46005C8A3D /* ATUChromeExtractor.m */; };
+		7C620A1C29FA554D00A401CA /* ATUSafariTechnologyPreviewExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C620A1B29FA554D00A401CA /* ATUSafariTechnologyPreviewExtractor.m */; };
 		7E9B915822D911BA0017A2BA /* ATUSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B915622D911B90017A2BA /* ATUSettingsViewController.m */; };
 		7E9B915922D911BA0017A2BA /* AutotypeURLSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B915722D911BA0017A2BA /* AutotypeURLSettings.xib */; };
 		D5328CBB26D296E100C318AC /* ATUFirefoxExtractor.h in Sources */ = {isa = PBXBuildFile; fileRef = D5328CBA26D296E100C318AC /* ATUFirefoxExtractor.h */; };
@@ -26,6 +27,8 @@
 		4C93F3BF22859C54005C8A3D /* ATUSafariExtractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATUSafariExtractor.m; sourceTree = "<group>"; };
 		4C93F3C122859E46005C8A3D /* ATUChromeExtractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATUChromeExtractor.h; sourceTree = "<group>"; };
 		4C93F3C222859E46005C8A3D /* ATUChromeExtractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATUChromeExtractor.m; sourceTree = "<group>"; };
+		7C620A1A29FA554D00A401CA /* ATUSafariTechnologyPreviewExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATUSafariTechnologyPreviewExtractor.h; sourceTree = "<group>"; };
+		7C620A1B29FA554D00A401CA /* ATUSafariTechnologyPreviewExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATUSafariTechnologyPreviewExtractor.m; sourceTree = "<group>"; };
 		7E9B915522D911B90017A2BA /* ATUSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATUSettingsViewController.h; sourceTree = "<group>"; };
 		7E9B915622D911B90017A2BA /* ATUSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATUSettingsViewController.m; sourceTree = "<group>"; };
 		7E9B915722D911BA0017A2BA /* AutotypeURLSettings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutotypeURLSettings.xib; sourceTree = "<group>"; };
@@ -63,17 +66,19 @@
 		4C8139292281FBC200092FD7 /* AutotypeURL */ = {
 			isa = PBXGroup;
 			children = (
-				7E9B915422D911A80017A2BA /* Settings */,
-				4C81392A2281FBC200092FD7 /* Info.plist */,
 				4C8139302281FD3900092FD7 /* ATUAutotypeURL.h */,
 				4C8139312281FD3900092FD7 /* ATUAutotypeURL.m */,
-				4C93F3BD22859AA7005C8A3D /* ATUURLExtraction.h */,
-				4C93F3BE22859C54005C8A3D /* ATUSafariExtractor.h */,
-				D5328CBA26D296E100C318AC /* ATUFirefoxExtractor.h */,
-				D5328CBC26D2971600C318AC /* ATUFirefoxExtractor.m */,
-				4C93F3BF22859C54005C8A3D /* ATUSafariExtractor.m */,
 				4C93F3C122859E46005C8A3D /* ATUChromeExtractor.h */,
 				4C93F3C222859E46005C8A3D /* ATUChromeExtractor.m */,
+				D5328CBA26D296E100C318AC /* ATUFirefoxExtractor.h */,
+				D5328CBC26D2971600C318AC /* ATUFirefoxExtractor.m */,
+				4C93F3BE22859C54005C8A3D /* ATUSafariExtractor.h */,
+				4C93F3BF22859C54005C8A3D /* ATUSafariExtractor.m */,
+				7C620A1A29FA554D00A401CA /* ATUSafariTechnologyPreviewExtractor.h */,
+				7C620A1B29FA554D00A401CA /* ATUSafariTechnologyPreviewExtractor.m */,
+				4C93F3BD22859AA7005C8A3D /* ATUURLExtraction.h */,
+				4C81392A2281FBC200092FD7 /* Info.plist */,
+				7E9B915422D911A80017A2BA /* Settings */,
 			);
 			path = AutotypeURL;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C620A1C29FA554D00A401CA /* ATUSafariTechnologyPreviewExtractor.m in Sources */,
 				4C8139322281FD3900092FD7 /* ATUAutotypeURL.m in Sources */,
 				D5328CBD26D2971600C318AC /* ATUFirefoxExtractor.m in Sources */,
 				7E9B915822D911BA0017A2BA /* ATUSettingsViewController.m in Sources */,
@@ -336,6 +342,7 @@
 				DSTROOT = "$(HOME)";
 				INFOPLIST_FILE = AutotypeURL/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/MacPass";
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hicknhacksoftware.AutotypeURL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -355,6 +362,7 @@
 				DSTROOT = "$(HOME)";
 				INFOPLIST_FILE = AutotypeURL/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/MacPass";
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hicknhacksoftware.AutotypeURL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

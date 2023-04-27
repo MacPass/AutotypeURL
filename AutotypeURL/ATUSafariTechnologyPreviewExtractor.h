@@ -1,9 +1,10 @@
 //
-//  ATUFirefoxExtractor.h
+//  ATUSafariTechnologyPreviewExtractor.h
 //  AutotypeURL
 //
-//  Created by Michael Starke on 10.05.19.
+//  Created by Advers on 27.04.2023.
 //  Copyright © 2019 HicknHack Software GmbH. All rights reserved.
+//  Copyright © 2023 Advers Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ATUFirefoxExtractor : NSObject <ATUURLExtraction>
+@interface ATUSafariTechnologyPreviewExtractor : NSObject <ATUURLExtraction>
 
 @end
 
